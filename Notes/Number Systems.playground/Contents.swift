@@ -108,3 +108,54 @@ var str = "Hello, playground"
 1 / 2
 
 // Done
+
+
+// Base 10 number of 76 to binary
+
+76 % 2
+76/2
+
+38%2
+38/2
+
+19%2
+19/2
+
+9%2
+9/2
+
+4%2
+4/2
+
+2%2
+2/2
+
+1%2
+1/2
+// Creates constant with value 76
+// Constants cannot be changed once created
+let valueToConvert = 17
+
+// Creates a variable with value valueToConvert
+// Variables can be changed once created
+var decimalValueLeft =  valueToConvert
+// Creates an empty string
+// Strings are text
+var binaryRepresentation = ""
+
+// Abstraction used is a loop.
+// Our end condition is that the decimal value left to convert is 0
+//  As long as the condition is true, the code will be run repeatedly.
+while decimalValueLeft > 0 {
+    // First, get next binary digit
+  let nextBinaryDigit = decimalValueLeft % 2
+    // Add the digit to the binary number
+    // Swift is a stricty typed language
+    // Does not convert data types
+    // So to make the Int into a string, we must identify this
+    binaryRepresentation = String(nextBinaryDigit) + binaryRepresentation
+    // Get decimal value left to convert
+    decimalValueLeft = decimalValueLeft / 2
+    
+}
+binaryRepresentation

@@ -26,6 +26,7 @@
 		A6079D7A25A8C970001E3FAB /* Notes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Notes; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6079D7D25A8C970001E3FAB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		A6079D8525A8C9E7001E3FAB /* Number Systems.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Number Systems.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A69AEC8325ACBA8B003C8DB5 /* Data Types.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Data Types.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +43,7 @@
 		A6079D7125A8C970001E3FAB = {
 			isa = PBXGroup;
 			children = (
+				A69AEC8325ACBA8B003C8DB5 /* Data Types.playground */,
 				A6079D7C25A8C970001E3FAB /* Notes */,
 				A6079D7B25A8C970001E3FAB /* Products */,
 			);
