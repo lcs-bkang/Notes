@@ -172,36 +172,36 @@ binaryRepresentation
  }
  */
  
- // Get the binary representation of a value
+ // Get the alternate representation of a value in a different base
  // Parameter is a piece of information that the function needs to work
-func getBinaryRepresentation(of valueToConvert: Int) -> String {
+func getRepresentation(of valueToConvert: Int, inBase base: Int) -> String {
 
     // Creates a variable with value valueToConvert
     // Variables can be changed once created
     var decimalValueLeft =  valueToConvert
     // Creates an empty string
     // Strings are text
-    var binaryRepresentation = ""
+    var Representation = ""
 
     // Abstraction used is a loop.
     // Our end condition is that the decimal value left to convert is 0
     //  As long as the condition is true, the code will be run repeatedly.
     while decimalValueLeft > 0 {
         // First, get next binary digit
-      let nextBinaryDigit = decimalValueLeft % 2
-        // Add the digit to the binary number
+      let nextDigit = decimalValueLeft % base
+        // Add the digit to the number
         // Swift is a stricty typed language
         // Does not convert data types
         // So to make the Int into a string, we must identify this
-        binaryRepresentation = String(nextBinaryDigit) + binaryRepresentation
+        Representation = String(nextDigit) + Representation
         // Get decimal value left to convert
-        decimalValueLeft = decimalValueLeft / 2
+        decimalValueLeft = decimalValueLeft / base
         
     }
-   return binaryRepresentation
+   return Representation
 
 }
- 
-getBinaryRepresentation(of: 60)
-
+ //  Call or use the function
+getRepresentation(of: 60, inBase: 2)
+getRepresentation(of: 60, inBase: 8)
 
