@@ -159,3 +159,18 @@ while decimalValueLeft > 0 {
     
 }
 binaryRepresentation
+
+
+// Functions - A way to group (encapsulate) related behaviour
+//  Once some behaviour is inside a function, the complexity is hidden.
+// We can use, or "call" the function whenever we want.
+/*
+ Multi line comment uses /*
+ */
+ 
+ /*
+ Basic syntax for a function
+    func functionName(parameter1, parameter2, ...) -> return type {
+ 
+ }
+ */
