@@ -164,9 +164,6 @@ binaryRepresentation
 // Functions - A way to group (encapsulate) related behaviour
 //  Once some behaviour is inside a function, the complexity is hidden.
 // We can use, or "call" the function whenever we want.
-/*
- Multi line comment uses /*
- */
  
  /*
  Basic syntax for a function
@@ -174,3 +171,37 @@ binaryRepresentation
  
  }
  */
+ 
+ // Get the binary representation of a value
+ // Parameter is a piece of information that the function needs to work
+func getBinaryRepresentation(of valueToConvert: Int) -> String {
+
+    // Creates a variable with value valueToConvert
+    // Variables can be changed once created
+    var decimalValueLeft =  valueToConvert
+    // Creates an empty string
+    // Strings are text
+    var binaryRepresentation = ""
+
+    // Abstraction used is a loop.
+    // Our end condition is that the decimal value left to convert is 0
+    //  As long as the condition is true, the code will be run repeatedly.
+    while decimalValueLeft > 0 {
+        // First, get next binary digit
+      let nextBinaryDigit = decimalValueLeft % 2
+        // Add the digit to the binary number
+        // Swift is a stricty typed language
+        // Does not convert data types
+        // So to make the Int into a string, we must identify this
+        binaryRepresentation = String(nextBinaryDigit) + binaryRepresentation
+        // Get decimal value left to convert
+        decimalValueLeft = decimalValueLeft / 2
+        
+    }
+   return binaryRepresentation
+
+}
+ 
+getBinaryRepresentation(of: 60)
+
+
