@@ -172,11 +172,19 @@ binaryRepresentation
  }
  */
  
-// Enumeration - Lists possibilities
-//
+// Enumeration - Lists possibilities (cases).  Limits possibiities
+// The : Int... defines the type of the raw value associated with a case
+// An example of abstraction.  Hides complexity.  Makes call site easier to read
+// Call site is the line of code that calls on a function
+enum NumberSystemBase: Int {
+    case binary = 2 // 2 is the raw value for this case
+    case octal = 8 // 8 = raw value
+    case hexadecimal = 16 // 16 = raw value
+    
+}
  // Get the alternate representation of a value in a different base
  // Parameter is a piece of information that the function needs to work
-func getRepresentation(of valueToConvert: Int, inBase base: Int) -> String {
+func getRepresentation(of valueToConvert: Int, inBase base: NumberSystemBase) -> String {
 
     // Creates a variable with value valueToConvert
     // Variables can be changed once created
@@ -190,22 +198,56 @@ func getRepresentation(of valueToConvert: Int, inBase base: Int) -> String {
     //  As long as the condition is true, the code will be run repeatedly.
     while decimalValueLeft > 0 {
         // First, get next binary digit
-      let nextDigit = decimalValueLeft % base
+        let nextDigit = decimalValueLeft % base.rawValue
         // Add the digit to the number
         // Swift is a stricty typed language
         // Does not convert data types
         // So to make the Int into a string, we must identify this
-        Representation = String(nextDigit) + Representation
+        
+        // IF statement checks a condition.  If true, do something, if false, do something else.
+        // First statement is true.  Else is when the condition is false.
+        if base == .hexadecimal {
+            // We know the base is hexadecimal
+            
+            // Carefully set the next digit
+            // When the digit is not 0-9, make digits A B C D E and F
+            
+            // Switch statement evaluates a value and takes different actions depending on the value.
+            switch nextDigit {
+            case 0...9:
+                Representation = String(nextDigit) + Representation
+            case 10:
+                Representation = "A" + Representation
+            case 11:
+                Representation = "B" + Representation
+            case 12:
+                Representation = "C" + Representation
+            case 13:
+                Representation = "D" + Representation
+            case 14:
+                Representation = "E" + Representation
+            case 15:
+                Representation = "F" + Representation
+
+            default:
+                break
+            }
+        } else {
+            // We know the base is octal or binary
+            Representation = String(nextDigit) + Representation
+        }
+        
+        
         // Get decimal value left to convert
-        decimalValueLeft = decimalValueLeft / base
+        decimalValueLeft = decimalValueLeft / base.rawValue
         
     }
    return Representation
 
 }
  //  Call or use the function
-getRepresentation(of: 60, inBase: 2)
-getRepresentation(of: 60, inBase: 8)
-getRepresentation(of: 17, inBase: 16)
-getRepresentation(of: 15, inBase: 16)
+getRepresentation(of: 60, inBase: .binary)
+getRepresentation(of: 60, inBase: .octal)
+getRepresentation(of: 17, inBase: .hexadecimal)
+getRepresentation(of: 63, inBase: .hexadecimal)
 
