@@ -172,6 +172,8 @@ binaryRepresentation
  }
  */
  
+// Enumeration - Lists possibilities
+//
  // Get the alternate representation of a value in a different base
  // Parameter is a piece of information that the function needs to work
 func getRepresentation(of valueToConvert: Int, inBase base: Int) -> String {
@@ -204,4 +206,6 @@ func getRepresentation(of valueToConvert: Int, inBase base: Int) -> String {
  //  Call or use the function
 getRepresentation(of: 60, inBase: 2)
 getRepresentation(of: 60, inBase: 8)
+getRepresentation(of: 17, inBase: 16)
+getRepresentation(of: 15, inBase: 16)
 
