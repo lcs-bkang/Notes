@@ -251,3 +251,34 @@ getRepresentation(of: 60, inBase: .octal)
 getRepresentation(of: 17, inBase: .hexadecimal)
 getRepresentation(of: 63, inBase: .hexadecimal)
 
+// Converting binary to decimal
+
+// Value we are converting
+let value = "1011011"
+
+// What base are we converting from?
+let base = 2.0
+
+// Exponent value at the rightmost digit
+var exponent = 0.0
+
+// Current sum in decimal
+var decimalEquivalent = 0.0
+// Iterate over each character
+// From right to left
+// For...in will loop the exact right amount of times.
+for character in value.reversed() {
+    
+    // Get the current digit as a double (decimal numbers)
+    if let digit = Double(String(character)) {
+        
+        // Add the current sum
+        decimalEquivalent += digit * pow(base, exponent)
+        
+        // Increment exponent
+        exponent += 1
+    }
+}
+
+// Get the result
+decimalEquivalent
