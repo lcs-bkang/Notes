@@ -254,10 +254,11 @@ getRepresentation(of: 63, inBase: .hexadecimal)
 // Converting binary to decimal
 
 // Value we are converting
-let value = "1011011"
+let value = "2A"
 
 // What base are we converting from?
-let base = 2.0
+let base = 16.0
+
 
 // Exponent value at the rightmost digit
 var exponent = 0.0
@@ -267,8 +268,29 @@ var decimalEquivalent = 0.0
 // Iterate over each character
 // From right to left
 // For...in will loop the exact right amount of times.
+//  DON'T KNOW WHY THIS IS NOT WORKING, MAKE SURE TO CHANGE LATER
 for character in value.reversed() {
-    
+    if base == 16.0 {
+        if let digit = Double(String(character)) {
+        switch digit {
+        case 0...9:
+            decimalEquivalent += digit * pow(base, exponent)
+        case Double("A"):
+            decimalEquivalent += 10 * pow(base, exponent)
+        case Double("B"):
+            decimalEquivalent += 11 * pow(base, exponent)
+        case Double("C"):
+            decimalEquivalent += 12 * pow(base, exponent)
+        case Double("D"):
+            decimalEquivalent += 13 * pow(base, exponent)
+        case Double("E"):
+            decimalEquivalent += 14 * pow(base, exponent)
+        case Double("F"):
+            decimalEquivalent += 15 * pow(base, exponent)
+        default:
+            break
+        }
+    } else {
     // Get the current digit as a double (decimal numbers)
     if let digit = Double(String(character)) {
         
@@ -278,7 +300,8 @@ for character in value.reversed() {
         // Increment exponent
         exponent += 1
     }
+        }
+    }
 }
-
 // Get the result
 decimalEquivalent
