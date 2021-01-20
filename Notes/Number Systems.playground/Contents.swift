@@ -251,13 +251,19 @@ getRepresentation(of: 60, inBase: .octal)
 getRepresentation(of: 17, inBase: .hexadecimal)
 getRepresentation(of: 63, inBase: .hexadecimal)
 
-// Converting binary to decimal
+enum NumberBases: Double {
+    case base2 = 2.0
+    case base8 = 8.0
+    case base16 = 16.0
+}
 
+// Converting binary to decimal
+func toDecimal(From digit: Int, toDecimal base: NumberBases) -> String {
 // Value we are converting
-let value = "2A"
+    let value = digit.reversed
 
 // What base are we converting from?
-let base = 16.0
+    let base = base.rawValue
 
 
 // Exponent value at the rightmost digit
@@ -269,7 +275,7 @@ var decimalEquivalent = 0.0
 // From right to left
 // For...in will loop the exact right amount of times.
 
-for character in value.reversed() {
+    for character in value() {
     if base == 16.0 {
         // If conversions to doubles work, it is 0-9
         if let digit = Double(String(character)) {
@@ -299,3 +305,4 @@ for character in value.reversed() {
 }
 // Get the result
 decimalEquivalent
+}
