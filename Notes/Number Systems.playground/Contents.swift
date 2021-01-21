@@ -258,10 +258,7 @@ enum NumberBases: Double {
 }
 
 // Converting binary to decimal
-func toDecimal(From digit: Int, toDecimal base: NumberBases) -> String {
-// Value we are converting
-    let value = digit.reversed
-
+func toDecimal(From value: String, FromBase base: NumberBases) -> Double {
 // What base are we converting from?
     let base = base.rawValue
 
@@ -275,7 +272,7 @@ var decimalEquivalent = 0.0
 // From right to left
 // For...in will loop the exact right amount of times.
 
-    for character in value() {
+    for character in value.reversed() {
     if base == 16.0 {
         // If conversions to doubles work, it is 0-9
         if let digit = Double(String(character)) {
@@ -304,5 +301,8 @@ var decimalEquivalent = 0.0
     exponent += 1
 }
 // Get the result
-decimalEquivalent
+return decimalEquivalent
 }
+
+toDecimal(From: "61A", FromBase: .base16)
+
