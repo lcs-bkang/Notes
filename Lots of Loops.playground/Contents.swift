@@ -42,7 +42,7 @@ repeat {
 print("Ready or not, here I come)")
 
 // A repeat loop will be run at least once, since the condition is checked to be false after the first run.  While loops will never be run if the condition is false because the conditon is checked before the first loop.
-while false {
+while true {
     print("This is false")
 }
 

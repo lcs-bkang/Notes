@@ -32,6 +32,7 @@
 		A6847EDA25B5FA3200251744 /* ExploringOptionals.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ExploringOptionals.playground; sourceTree = "<group>"; };
 		A689E95025B9CB1600EAE1CE /* Arrays, Optionals, Conditions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Arrays, Optionals, Conditions.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A69AEC8325ACBA8B003C8DB5 /* Data Types.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Data Types.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A6A300EB25CC35400024A1B3 /* Structures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Structures.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +49,7 @@
 		A6079D7125A8C970001E3FAB = {
 			isa = PBXGroup;
 			children = (
+				A6A300EB25CC35400024A1B3 /* Structures.playground */,
 				A680425525C2FAD200B72228 /* Lots of Loops.playground */,
 				A689E95025B9CB1600EAE1CE /* Arrays, Optionals, Conditions.playground */,
 				A6847EDA25B5FA3200251744 /* ExploringOptionals.playground */,
